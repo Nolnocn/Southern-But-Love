@@ -208,7 +208,7 @@ public class MenuManager : MonoBehaviour {
 
 	public IEnumerator ButtonClicked(string name)
 	{
-		if(!transition && sceneLoad != null)
+		if(!transition && sceneLoad == null)
 		{
 			switch(name)
 			{
