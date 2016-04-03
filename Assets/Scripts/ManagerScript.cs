@@ -113,6 +113,7 @@ public class ManagerScript : MonoBehaviour {
 		for(int i = 0; i < 20; i++)
 		{
 			Transform highlight = waterHighlights[i];
+			highlight.position -= new Vector3( 0.1f * Time.deltaTime, 0.0f, 0.0f );
 			if(highlight.position.x < Camera.main.transform.position.x - halfScreenWidth - highlight.localScale.x)
 			{
 				SpriteRenderer sr = highlight.GetComponent<SpriteRenderer>();
