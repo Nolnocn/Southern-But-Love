@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class LoverScript : MonoBehaviour {
@@ -238,7 +239,8 @@ public class LoverScript : MonoBehaviour {
 
 		if(Input.GetButtonDown("Replay") && !alive)
 		{
-			Application.LoadLevel(1);
+			//Application.LoadLevel(1);
+			SceneManager.LoadScene(1);
 		}
 	}
 

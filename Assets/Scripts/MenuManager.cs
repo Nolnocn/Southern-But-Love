@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -15,6 +16,8 @@ public class MenuManager : MonoBehaviour {
 	public List<GameObject> Main = new List<GameObject>();
 	public GUISkin skin; 
 	public Font font;
+
+	private AsyncOperation sceneLoad;
 
 	// Use this for initialization
 	void Start () {
@@ -205,7 +208,7 @@ public class MenuManager : MonoBehaviour {
 
 	public IEnumerator ButtonClicked(string name)
 	{
-		if(!transition)
+		if(!transition && sceneLoad != null)
 		{
 			switch(name)
 			{
@@ -213,7 +216,8 @@ public class MenuManager : MonoBehaviour {
 				guideScreen.transform.position = new Vector3(0, 0, 0);
 				guideScreen.GetComponent<SpriteRenderer>().sortingOrder = 100;
 				yield return new WaitForSeconds(0.5f);
-				Application.LoadLevel(1);
+				//Application.LoadLevel(1);
+				sceneLoad = SceneManager.LoadSceneAsync(1);
 				break;
 			case "ScoresButton":
 				yield return new WaitForSeconds(0.25f);

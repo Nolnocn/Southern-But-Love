@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class GameOverScript : MonoBehaviour {
@@ -66,12 +67,14 @@ public class GameOverScript : MonoBehaviour {
 		{
 		case "Replay":
 			SubmitScore();
-			Application.LoadLevel(1);
+			//Application.LoadLevel(1);
+			SceneManager.LoadScene(1);
 			break;
 		case "Submit":
 		case "Quit":
 			SubmitScore();
-			Application.LoadLevel(0);
+			//Application.LoadLevel(0);
+			SceneManager.LoadScene(0);
 			break;
 		}
 	}

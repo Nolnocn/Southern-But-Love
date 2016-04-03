@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class PauseMenuScript : MonoBehaviour {
@@ -22,7 +23,8 @@ public class PauseMenuScript : MonoBehaviour {
 			break;
 		case "Quit":
 			playerScript.TogglePause();
-			Application.LoadLevel(0);
+			//Application.LoadLevel(0);
+			SceneManager.LoadScene(0);
 			break;
 		}
 	}
