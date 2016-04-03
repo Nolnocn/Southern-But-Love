@@ -30,6 +30,9 @@ public class LoverScript : MonoBehaviour {
 	public WhiskeyBarScript barScript;
 	public PauseMenuScript pauseScript;
 	public GameOverScript gameOverScript;
+
+	private Rigidbody2D myRigidbody;
+	private Collider2D myCollider;
 	
 	void Start ()
 	{
@@ -61,6 +64,9 @@ public class LoverScript : MonoBehaviour {
 		geterdone = audioSources[7];
 		barScript.SetAmount(shieldMeter);
 		StartCoroutine(Countdown());
+
+		myRigidbody = GetComponent<Rigidbody2D>();
+		myCollider = GetComponent<Collider2D>();
 	}
 
 	void Update ()
@@ -87,7 +93,7 @@ public class LoverScript : MonoBehaviour {
 			{
 				if(transform.position.x > ManagerScript.halfScreenWidth * 2 + Camera.main.transform.position.x)
 				{
-					GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+					myRigidbody.velocity = Vector2.zero;
 					if(!gameOverScript.win)
 					{
 						gameOverScript.win = true;
@@ -111,7 +117,7 @@ public class LoverScript : MonoBehaviour {
 				if(ram)
 				{
 					col.gameObject.GetComponent<HillBillyScript>().Die();
-					GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, -GetComponent<Rigidbody2D>().velocity.y * 0.15f);
+					myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, -myRigidbody.velocity.y * 0.15f);
 				}
 				else
 				{
@@ -190,7 +196,7 @@ public class LoverScript : MonoBehaviour {
 	{
 		if(alive && !jump && !ram)
 		{
-			GetComponent<Rigidbody2D>().velocity = new Vector2(currSpeed + horSpeed * Input.GetAxis("Horizontal"), vertSpeed * Input.GetAxis("Vertical"));
+			myRigidbody.velocity = new Vector2(currSpeed + horSpeed * Input.GetAxis("Horizontal"), vertSpeed * Input.GetAxis("Vertical"));
 			ConstrainVertical();
 			ConstrainHorizontal();
 			if(Input.GetButtonDown("Ram"))
@@ -282,13 +288,13 @@ public class LoverScript : MonoBehaviour {
 
 	private void ResetVelocity()
 	{
-		GetComponent<Rigidbody2D>().velocity = new Vector2(currSpeed, 0);
+		myRigidbody.velocity = new Vector2(currSpeed, 0);
 	}
 
 	private void StopMoving()
 	{
 		currSpeed = 0;
-		GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+		myRigidbody.velocity = Vector2.zero;
 	}
 
 	private void Ram()
@@ -297,7 +303,7 @@ public class LoverScript : MonoBehaviour {
 		if(dir != 0)
 		{
 			ram = true;
-			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, vertSpeed * 1.5f * dir);
+			myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, vertSpeed * 1.5f * dir);
 			animator.SetFloat("VertSpeed", dir);
 			animator.SetTrigger("Ram");
 		}
@@ -320,21 +326,21 @@ public class LoverScript : MonoBehaviour {
 	{
 		if(jump) {
 			GetComponent<Collider2D>().enabled = false;
-			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 10.0f);
-			GetComponent<Rigidbody2D>().gravityScale = 1.0f;
+			myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, 10.0f);
+			myRigidbody.gravityScale = 1.0f;
 		}
 	}
 
 	private void CheckJump()
 	{
-		float yVel = GetComponent<Rigidbody2D>().velocity.y;
+		float yVel = myRigidbody.velocity.y;
 		animator.SetFloat("VertSpeed", yVel);
 		if(transform.position.y < yLevel && yVel < 0)
 		{
-			GetComponent<Collider2D>().enabled = true;
-			GetComponent<Rigidbody2D>().gravityScale = 0.0f;
+			myCollider.enabled = true;
+			myRigidbody.gravityScale = 0.0f;
 			transform.position = new Vector3(transform.position.x, yLevel, 0);
-			GetComponent<Rigidbody2D>().velocity = new Vector2(currSpeed, 0);
+			myRigidbody.velocity = new Vector2(currSpeed, 0);
 			animator.SetTrigger("EndJump");
 		}
 	}
@@ -402,7 +408,7 @@ public class LoverScript : MonoBehaviour {
 			EndShield();
 		}
 		win = true;
-		GetComponent<Rigidbody2D>().velocity = new Vector2(currSpeed, 0);
+		myRigidbody.velocity = new Vector2(currSpeed, 0);
 		mngr.Win();
 		StartCoroutine(TakeOffDelay());
 	}
