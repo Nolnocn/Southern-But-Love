@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-//using UnityEditor;
+using UnityEditor;
 
-//[ExecuteInEditMode]
+[ExecuteInEditMode]
 
 public class LevelLoad : MonoBehaviour {
 
@@ -78,7 +78,7 @@ public class LevelLoad : MonoBehaviour {
 				}
 			}
 		}
-		//PrefabUtility.CreatePrefab ("Assets/Resources/Levels/Prefabs/level" + number + ".prefab", levelSegment);
+		PrefabUtility.CreatePrefab ("Assets/Resources/Levels/Prefabs/level" + number + ".prefab", levelSegment);
 		DestroyImmediate(levelSegment);
 	}
 	

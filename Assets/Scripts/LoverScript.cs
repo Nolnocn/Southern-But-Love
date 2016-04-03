@@ -130,15 +130,7 @@ public class LoverScript : MonoBehaviour {
 			}
 			else if(col.tag == "Projectile")
 			{
-				if(shield)
-				{
-					col.gameObject.GetComponent<Rigidbody2D>().velocity *= -1.5f;
-				}
-				else
-				{
-					Die();
-					Destroy(col.gameObject);
-				}
+				
 			}
 			else if(col.tag == "Speed Up")
 			{
@@ -149,6 +141,19 @@ public class LoverScript : MonoBehaviour {
 			{
 				Win ();
 			}
+		}
+	}
+
+	public void HandleBulletHit(GameObject bullet)
+	{
+		if(shield)
+		{
+			bullet.GetComponent<Rigidbody2D>().velocity *= -1.5f;
+		}
+		else
+		{
+			Die();
+			Destroy(bullet);
 		}
 	}
 

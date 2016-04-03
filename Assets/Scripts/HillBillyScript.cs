@@ -37,13 +37,10 @@ public class HillBillyScript : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D col)
+	public void HandleBulletHit( GameObject bullet )
 	{
-		if(col.tag == "Projectile")
-		{
-			Die();
-			Destroy(col.gameObject);
-		}
+		Die();
+		Destroy(bullet);
 	}
 	
 	private void CheckPlayerPos()
