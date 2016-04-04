@@ -21,14 +21,17 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -3
-  maxTextureSize: 1024
+  maxTextureSize: 512
   textureSettings:
     filterMode: -1
     aniso: 1
@@ -36,12 +39,14 @@ TextureImporter:
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
+  rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 150
   alphaIsTransparency: 1
@@ -59,6 +64,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29, y: 22}
+        - {x: 16, y: 40}
+        - {x: -14, y: 55}
+        - {x: -41, y: 55}
+        - {x: -56, y: 46}
+        - {x: -60, y: 28}
+        - {x: -60, y: -50}
+        - {x: -41, y: -55}
+        - {x: 40, y: -55}
+        - {x: 59, y: -39}
+        - {x: 60, y: -36}
+        - {x: 60, y: -24}
     - name: Whisky Spritesheet WIP#2_1
       rect:
         serializedVersion: 2
@@ -69,6 +87,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3, y: 64}
+        - {x: -30, y: 64}
+        - {x: -46, y: 59}
+        - {x: -60, y: 8}
+        - {x: -60, y: -46}
+        - {x: -46, y: -49}
+        - {x: 56, y: -49}
+        - {x: 58, y: -48}
+        - {x: 58, y: -5}
+        - {x: 30, y: 41}
     - name: Whisky Spritesheet WIP#2_2
       rect:
         serializedVersion: 2
@@ -79,6 +108,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: 64}
+        - {x: -34, y: 64}
+        - {x: -61, y: -10}
+        - {x: -61, y: -40}
+        - {x: -60, y: -41}
+        - {x: -13, y: -51}
+        - {x: 14, y: -51}
+        - {x: 50, y: -38}
+        - {x: 55, y: -32}
+        - {x: 55, y: -9}
     - name: Whisky Spritesheet WIP#2_3
       rect:
         serializedVersion: 2
@@ -89,6 +129,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 64}
+        - {x: -46, y: 57}
+        - {x: -60, y: 0}
+        - {x: -60, y: -28}
+        - {x: -43, y: -50}
+        - {x: 51, y: -50}
+        - {x: 58, y: -41}
+        - {x: 58, y: -9}
+        - {x: 11, y: 64}
     - name: Whisky Spritesheet WIP#2_4
       rect:
         serializedVersion: 2
@@ -99,6 +149,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 57}
+        - {x: -43, y: 57}
+        - {x: -55, y: 35}
+        - {x: -55, y: -37}
+        - {x: -40, y: -44}
+        - {x: -34, y: -45}
+        - {x: -6, y: -52}
+        - {x: 20, y: -52}
+        - {x: 57, y: -37}
+        - {x: 57, y: -6}
     - name: Whisky Spritesheet WIP#2_5
       rect:
         serializedVersion: 2
@@ -109,5 +170,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 51}
+        - {x: -50, y: 34}
+        - {x: -58, y: -3}
+        - {x: -58, y: -39}
+        - {x: -49, y: -43}
+        - {x: -15, y: -56}
+        - {x: 48, y: -56}
+        - {x: 59, y: -44}
+        - {x: 59, y: -9}
+        - {x: -8, y: 51}
+    outline: []
   spritePackingTag: 
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 
