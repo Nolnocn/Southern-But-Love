@@ -74,7 +74,10 @@ public class MenuManager : MonoBehaviour {
 		scoreBTN.SetName("ScoresButton",this);
 
 		//Quit Button
-		if(Application.platform != RuntimePlatform.OSXWebPlayer && Application.platform != RuntimePlatform.WindowsWebPlayer)
+		bool isWebBuild = (Application.platform == RuntimePlatform.OSXWebPlayer || 
+			Application.platform == RuntimePlatform.WindowsWebPlayer ||
+			Application.platform == RuntimePlatform.WebGLPlayer);
+		if(!isWebBuild)
 		{
 			GameObject quitButton = new GameObject ();
 			quitButton.AddComponent<SpriteRenderer> ();
